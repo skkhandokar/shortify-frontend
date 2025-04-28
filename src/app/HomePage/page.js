@@ -49,8 +49,8 @@ export default function Home() {
       const response = await axios.post(endpoint, data, config);
 
       const shortened = isCustomShortCode
-        ? `${window.location.host}/${customShortCode}`
-        : `${window.location.host}/${response.data.short_code}`;
+        ? `${window.location.origin}/${customShortCode}`
+        : `${window.location.origin}/${response.data.short_code}`;
 
       setShortUrl(shortened);
       setError('');
@@ -157,15 +157,28 @@ export default function Home() {
                     <ContentCopyIcon fontSize="small" />
                   </Button>
                 </Box>
+
+                {/* Authenticated Buttons */}
                 {isAuthenticated && (
-                  <Button
-                    variant="text"
-                    color="secondary"
-                    onClick={() => router.push('/my-urls')}
-                    className="hover:underline hover:text-emerald-700"
-                  >
-                    View My URLs
-                  </Button>
+                  <div className="flex flex-col space-y-2 mt-4">
+                    <Button
+                      variant="outlined"
+                      color="primary"
+                      onClick={() => router.push('/my-urls')}
+                      className="hover:underline hover:text-emerald-700"
+                    >
+                      View My URLs
+                    </Button>
+
+                    <Button
+                      variant="outlined"
+                      color="secondary"
+                      onClick={() => router.push('/custom-urls')}
+                      className="hover:underline hover:text-indigo-700"
+                    >
+                      View My Custom URLs
+                    </Button>
+                  </div>
                 )}
               </Box>
             </>
