@@ -20,7 +20,7 @@ export default function MyURLs() {
       return
     }
 
-    fetch('http://localhost:8000/api/my-urls/', {
+    fetch('https://skkhandokar22.pythonanywhere.com/api/my-urls/', {
       headers: {
         Authorization: `Token ${token}`,
       },

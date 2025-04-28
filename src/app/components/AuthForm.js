@@ -26,7 +26,7 @@ export default function AuthForm({ type = "signin" }) {
         : { username: formData.username, password: formData.password }
 
     try {
-      const res = await fetch(`http://localhost:8000${endpoint}`, {
+      const res = await fetch(`https://skkhandokar22.pythonanywhere.com${endpoint}`, {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify(body),
