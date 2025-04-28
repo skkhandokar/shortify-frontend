@@ -13,6 +13,7 @@
     "@emotion/styled": "^11.14.0",
     "@mui/icons-material": "^7.0.2",
     "@mui/material": "^7.0.2",
+    "@vercel/analytics": "^1.5.0",
     "axios": "^1.8.4",
     "date-fns": "^4.1.0",
     "next": "15.2.4",
